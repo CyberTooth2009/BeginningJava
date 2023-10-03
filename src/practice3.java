@@ -12,12 +12,6 @@ public class practice3 {
         System.out.println("Type the number of rows: ");
         rows = input.nextInt();
 //make the triangle depending on the amount of rows
-        /*for (int x = 0; x <= rows; x++) {
-            for (int y = 1; y <= x; y++) {
-                    System.out.print(y);
-            }
-            System.out.println(" ");
-        } */
         for (int x = 0; x <= rows; x++) {
             for (int y = 1; y <= x; y++) {
                 System.out.print(i++);
