@@ -44,7 +44,8 @@ public class practice2 {
 //Draw the triangle based on the conditions given
         for (int i= rows; i>= 1; i--){
             for (int j = 1; j <= cols; j++) {
-                System.out.print(txt);
+
+           System.out.print(txt);
             }
             System.out.println("");
         }

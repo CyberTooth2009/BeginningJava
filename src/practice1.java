@@ -5,8 +5,9 @@ import java.util.Scanner;
 
 public class practice1 {
     public static <string> void main(String[] args) {
+        //Introduce the program
         System.out.println("This program is a number triangle");
-        //Number of rows and columns
+        //Number of rows
         int rows = 0;
         Scanner input = new Scanner(System.in);
         //Ask user for input
