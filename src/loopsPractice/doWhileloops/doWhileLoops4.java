@@ -14,6 +14,7 @@ public class doWhileLoops4 {
         String input = "";
 
         //Run conditional loop tree to authenticate user
+        System.out.println("Welcome to the password checker game!");
         do {
             System.out.println("Please enter the password: ");
             input = in.next();
