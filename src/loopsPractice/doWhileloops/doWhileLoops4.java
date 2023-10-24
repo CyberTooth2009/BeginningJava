@@ -1,5 +1,6 @@
 package loopsPractice.doWhileloops;
 
+import javax.sound.midi.SysexMessage;
 import java.util.Scanner;
 
 //Code written by Samuel Ralph
@@ -10,23 +11,24 @@ import java.util.Scanner;
 public class doWhileLoops4 {
     public static void main(String[] args) {
 
-            //Declare variables and libraries
-            String pass = "Secret123";
-            Scanner in = new Scanner(System.in);
-            String input = "";
-            int attempts = 3;
+        //Declare variables and libraries
+        String pass = "Secret123";
+        Scanner in = new Scanner(System.in);
+        String input = "";
 
-
+        //Run conditional loop tree to authenticate user
+        do {
             System.out.println("Please enter the password: ");
-            while (attempts > 0) {
-                System.out.print("Enter the password: ");
-                input = in.next();
+            input = in.next();
 
-                if (pass.equals(input)) {
-                    System.out.println("Password accepted. Access granted!");
-                    break;
-                    }
-                }
+            if (input.equals(pass)) {
+                System.out.println("Congrats! You got the correct password!");
+                break;
+            } else {
+                System.out.println("Incorrect password. Try again.");
             }
 
+
+        }while (input != pass);
+    }
 }
