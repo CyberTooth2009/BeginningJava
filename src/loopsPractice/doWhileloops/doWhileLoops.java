@@ -18,7 +18,5 @@ public class doWhileLoops {
         }
         while(counter <= 10);
         }
-
-
     }
 
