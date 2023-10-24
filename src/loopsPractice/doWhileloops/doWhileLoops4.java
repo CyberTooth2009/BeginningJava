@@ -1,12 +1,9 @@
 package loopsPractice.doWhileloops;
 
-import javax.sound.midi.SysexMessage;
 import java.util.Scanner;
 
 //Code written by Samuel Ralph
 //Grade: 9th
-
-import java.util.Scanner;
 
 public class doWhileLoops4 {
     public static void main(String[] args) {
@@ -29,6 +26,6 @@ public class doWhileLoops4 {
             }
 
 
-        }while (input != pass);
+        }while (!input.equals(pass));
     }
 }
