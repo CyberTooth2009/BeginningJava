@@ -5,7 +5,7 @@ package StringsInJava;
 
 import java.util.Scanner;
 
-public class Main {
+public class Strings1 {
     public static void main(String[] args) {
 
         //Declare variables and libraries
