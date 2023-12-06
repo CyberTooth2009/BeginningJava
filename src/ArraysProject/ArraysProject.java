@@ -20,6 +20,10 @@ public class ArraysProject {
         System.out.println("1. Problem Solution 1");
         System.out.println("2. Problem Solution 2");
         System.out.println("3. Problem Solution 3");
+        System.out.println("4. Problem Solution 4");
+        System.out.println("5. Problem Solution 5");
+        System.out.println("6. Problem Solution 6");
+        System.out.println("7. Problem Solution 7");
         System.out.println("0. QUIT");
 
         //Prompting user for selection
@@ -33,7 +37,7 @@ public class ArraysProject {
             case 2:
                 System.out.println(containsNumber(0));
             case 3:
-                average(1,2,3,4,5);
+                average();
 
 
         }
@@ -80,11 +84,13 @@ public class ArraysProject {
         }
         return result;
     }
-    public static double average (int[] classGrades){
+    public static void average (){
         //Declaring libraries
         Scanner in = new Scanner(System.in);
 
         //Asking user for student grades in respective classes
+        int[] classGrades = new int[6];
+
         System.out.println("Well to the Bonaville University scholarship readiness checker");
         System.out.println("Please input the student's Physics grade from last semester:  ");
         classGrades[0] = in.nextInt();
@@ -106,15 +112,22 @@ public class ArraysProject {
 
         int average = 0;
 
+        //Calculating student's average
         average = ((classGrades[0] + classGrades[1] + classGrades [2] + classGrades[3] + classGrades [4] + classGrades[5])/6);
 
+        //Deliver the news
         if(average >= 80){
             System.out.println("This student meets the criteria for a Bonaville University scholarship.");
         }else
-            System.out.println("This student does not meed the criteria for a scholarship.");
-
-        return average;
+            System.out.println("This student does not need the criteria for a scholarship.");
     }
+    public static int arrayReverser(int[] ogFortnite){
+        //Declare libraries
+        Scanner in = new Scanner(System.in);
+
+    }
+
+
 
 
 }
