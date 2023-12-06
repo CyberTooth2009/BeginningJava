@@ -3,6 +3,7 @@ package ArraysProject;
 //Import libraries
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.Arrays;
 
 public class ArraysProject {
     public static void main(String[] args) {
@@ -38,6 +39,8 @@ public class ArraysProject {
                 System.out.println(containsNumber(0));
             case 3:
                 average();
+            case 4:
+                System.out.println(Arrays.toString(arrayReverser()));
 
 
         }
@@ -121,11 +124,47 @@ public class ArraysProject {
         }else
             System.out.println("This student does not need the criteria for a scholarship.");
     }
-    public static int arrayReverser(int[] ogFortnite){
-        //Declare libraries
+    public static int[] arrayReverser(){
+        //Create array
         Scanner in = new Scanner(System.in);
+        int [] rotatedArray = new int[6];
+        //Greet user and prompt for input
+        System.out.println("This program will rotate a 6 value array that you define");
+        System.out.println("Please input the first value");
+        int firstValue = in.nextInt();
+        System.out.println("Please input the second value");
+        int secondValue = in.nextInt();
+        System.out.println("Please input the third value");
+        int thirdValue = in.nextInt();
+        System.out.println("Please input the fourth value");
+        int fourthValue = in.nextInt();
+        System.out.println("Please input the fifth value");
+        int fifthValue = in.nextInt();
+        System.out.println("Please input the sixth value");
+        int sixthValue = in.nextInt();
 
+        System.out.println("Your original array is the following: ");
+        System.out.print(firstValue + " ");
+        System.out.print(" " + secondValue + " ");
+        System.out.print(" " + thirdValue + " ");
+        System.out.print(" " + fourthValue + " ");
+        System.out.print(" " + fifthValue + " ");
+        System.out.print(" " + sixthValue + " ");
+        System.out.println(" ");
+
+        //Rotate values in array
+        rotatedArray[0] = sixthValue;
+        rotatedArray[1] = secondValue;
+        rotatedArray[2] = thirdValue;
+        rotatedArray[3] = fourthValue;
+        rotatedArray[4] = fifthValue;
+        rotatedArray[5] = firstValue;
+
+        System.out.println("Your rotated array is the following: ");
+
+        return rotatedArray;
     }
+
 
 
 
