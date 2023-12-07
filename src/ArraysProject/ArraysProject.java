@@ -1,31 +1,43 @@
 package ArraysProject;
 
+//Declaring colors
+
 //Import libraries
 import java.util.Scanner;
 import java.lang.Math;
 import java.util.Arrays;
 
 public class ArraysProject {
+    //Declaring colors
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String BLACK = "\u001B[30m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String PURPLE = "\u001B[35m";
+    public static final String CYAN = "\u001B[36m";
+    public static final String WHITE = "\u001B[37m";
     public static void main(String[] args) {
         //Declaring libraries
         Scanner in = new Scanner(System.in);
 
         //Printing out purpose of program
-        System.out.println("***************************************");
+        System.out.println(CYAN + "***************************************");
         System.out.println("*            Problem Solver           *");
         System.out.println("***************************************");
-        System.out.println("This program offers a large variety of different problem solvers.\n Selected the one you want below by inputting the corresponding number");
+        System.out.println("This program offers a large variety of different problem solvers.\nSelected the one you want below by inputting the corresponding number");
 
         //Printing out menu of options
-        System.out.println("------Menu------");
-        System.out.println("1. Problem Solution 1");
-        System.out.println("2. Problem Solution 2");
-        System.out.println("3. Problem Solution 3");
-        System.out.println("4. Problem Solution 4");
-        System.out.println("5. Problem Solution 5");
-        System.out.println("6. Problem Solution 6");
-        System.out.println("7. Problem Solution 7");
-        System.out.println("0. QUIT");
+        System.out.println(RED + "------Menu------");
+        System.out.println(GREEN + "1. Square Root of Array");
+        System.out.println(YELLOW + "2. Contains number?");
+        System.out.println(BLUE + "3. Bonaville University Scholarship checker");
+        System.out.println(PURPLE + "4. Array rotator");
+        System.out.println(RED + "5. Minimum and Maximum of an Array");
+        System.out.println(WHITE + "6. Finding duplicate integers");
+        System.out.println(CYAN + "7. Finding duplicate strings");
+        System.out.println(ANSI_RESET + "0. QUIT");
 
         //Prompting user for selection
         System.out.print("Enter your choice: ");
@@ -35,17 +47,25 @@ public class ArraysProject {
         switch(choice){
             case 1:
                 rootArray(0);
+                break;
             case 2:
-                System.out.println(containsNumber(0));
+                System.out.println(GREEN + containsNumber(0));
+                break;
             case 3:
                 average();
+                break;
             case 4:
-                System.out.println(Arrays.toString(arrayReverser()));
+                System.out.println(BLUE + Arrays.toString(arrayReverser()));
+                break;
             case 5:
-                System.out.println(Arrays.toString(minMaxArray()));
-
-
-
+                System.out.println(PURPLE + Arrays.toString(minMaxArray()));
+                break;
+            case 6:
+                duplicateInts();
+                break;
+            case 7:
+                duplicateStrings();
+                break;
         }
     }
 
@@ -64,7 +84,7 @@ public class ArraysProject {
         System.out.print("Here is the squared version: ");
         for(int i = 0; i < NumberList.length; i++){
             double SquareRoot = Math.sqrt(NumberList[i]);
-            System.out.print(" " + SquareRoot + " ");
+            System.out.print(CYAN + " " + SquareRoot + " ");
             double results = SquareRoot;
         }
         return Square;
@@ -97,7 +117,7 @@ public class ArraysProject {
         //Asking user for student grades in respective classes
         int[] classGrades = new int[6];
 
-        System.out.println("Well to the Bonaville University scholarship readiness checker");
+        System.out.println(GREEN + "Well to the Bonaville University scholarship readiness checker");
         System.out.println("Please input the student's Physics grade from last semester:  ");
         classGrades[0] = in.nextInt();
 
@@ -132,7 +152,7 @@ public class ArraysProject {
         Scanner in = new Scanner(System.in);
         int [] rotatedArray = new int[6];
         //Greet user and prompt for input
-        System.out.println("This program will rotate a 6 value array that you define");
+        System.out.println(CYAN + "This program will rotate a 6 value array that you define");
         System.out.println("Please input the first value");
         int firstValue = in.nextInt();
         System.out.println("Please input the second value");
@@ -146,7 +166,8 @@ public class ArraysProject {
         System.out.println("Please input the sixth value");
         int sixthValue = in.nextInt();
 
-        System.out.println("Your original array is the following: ");
+        //Print out original array
+        System.out.println(RED + "Your original array is the following: ");
         System.out.print(firstValue + " ");
         System.out.print(" " + secondValue + " ");
         System.out.print(" " + thirdValue + " ");
@@ -172,14 +193,14 @@ public class ArraysProject {
         //Declare libraries
         Scanner in = new Scanner(System.in);
         //Prompt user for array size input
-        System.out.println("This program will return the minimum and maximum value observed in a user-defined array.");
+        System.out.println(BLUE + "This program will return the minimum and maximum value observed in a user-defined array.");
         System.out.println("How many values will your array have? ");
         int arraySize = in.nextInt();
         //Create array
         int[] intArray = new int[arraySize];
         //Get user to input their chosen values based on the size they gave before
         for(int i = 0; i < arraySize; i++) {
-            System.out.print("Enter value number " + i + ": ");
+            System.out.print(PURPLE + "Enter value number " + i + ": ");
             intArray[i] = in.nextInt();
         }
         //Use loop to go through array, by tracking the array while iterating
@@ -200,12 +221,87 @@ public class ArraysProject {
         resultantValues[0] = minValue;
         resultantValues[1] = maxValue;
         //Return result
-        System.out.println("The result is given in [minValue, maxValue] format");
+        System.out.println(YELLOW + "The result is given in [minValue, maxValue] format");
         return resultantValues;
     }
+    public static void duplicateInts(){
+        //Declare libraries
+        Scanner in = new Scanner(System.in);
+        //Prompt user for array length
+        System.out.println("How many values will your array have? ");
+        int arraySize = in.nextInt();
 
+        //Create array
+        int[] userInput= new int[arraySize];
 
+        //Get user to input their chosen values based on the size they gave before
+        for(int i = 0; i < arraySize; i++) {
+            System.out.print(RED + "Enter value number " + i + ": ");
+            userInput[i] = in.nextInt();
+        }
+        //Create array to store duplicate values
+        int[] duplicatesArray = new int[arraySize];
 
+        //Iterate through the array, checking whether any specific value is equal to the other
+        for(int i = 0; i < userInput.length; i++) {
+            for(int j = i+1; j < userInput.length; j++) {
+                if(userInput[i] == userInput[j]) {
+                    duplicatesArray[i] = userInput[i];
+                }
+            }
+        }
+        //Print out original array
+        System.out.println(GREEN +"The original array is the following: ");
+        System.out.print(Arrays.toString(userInput));
+        System.out.println(" ");
+        //Present duplicate values
+        System.out.println("Duplicate values:");
+        for(int i = 0; i < duplicatesArray.length; i++) {
+            if(duplicatesArray[i] != 0) {
+                System.out.println(duplicatesArray[i]);
+            }
+        }
+    }
+    public static void duplicateStrings(){
+        //Declare libraries
+        Scanner in = new Scanner(System.in);
+        //Prompt user for array length
+        System.out.println("How many values will your array have? ");
+        int arraySize = in.nextInt();
 
+        //Create array
+        String[] listOfWords = new String[arraySize];
 
+        //Get user to input their chosen values based on the size they gave before
+        for(int i = 0; i < arraySize; i++) {
+            System.out.print(CYAN + "Enter phrase number " + i + ": ");
+            listOfWords[i] = in.next();
+        }
+        //Create array to store duplicate values and initialize all the indexes
+        String[] duplicateStrings = new String[arraySize];
+        for(int i=0; i < arraySize; i++) {
+            duplicateStrings[i] = "";
+        }
+
+        //Iterate through the array, checking whether any specific value is equal to the other
+        for(int i = 0; i < listOfWords.length; i++) {
+            for(int j = i+1; j < listOfWords.length; j++) {
+                if(listOfWords[i].equals(listOfWords[j])) {
+                    duplicateStrings[i] = listOfWords[i];
+                }
+            }
+        }
+        //Print out original array
+        System.out.println("The original array is the following: ");
+        System.out.print(Arrays.toString(listOfWords));
+        System.out.println(" ");
+
+        //Present duplicate values
+        System.out.println("Duplicate strings:");
+        for(int i = 0; i < duplicateStrings.length; i++) {
+            if(!duplicateStrings[i].equals("")) {
+                System.out.println(duplicateStrings[i]);
+            }
+        }
+    }
 }
