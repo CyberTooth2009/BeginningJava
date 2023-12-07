@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.lang.Math;
 import java.util.Arrays;
 
-public class ArraysProject {
+public class wArraysProject {
     public static void main(String[] args) {
         //Declaring libraries
         Scanner in = new Scanner(System.in);
@@ -41,6 +41,8 @@ public class ArraysProject {
                 average();
             case 4:
                 System.out.println(Arrays.toString(arrayReverser()));
+            case 5:
+
 
 
         }
@@ -160,9 +162,45 @@ public class ArraysProject {
         rotatedArray[4] = fifthValue;
         rotatedArray[5] = firstValue;
 
+        //Print out and return result
         System.out.println("Your rotated array is the following: ");
 
         return rotatedArray;
+    }
+    public static int[] minMaxArray(){
+        //Declare libraries
+        Scanner in = new Scanner(System.in);
+        //Prompt user for array size input
+        System.out.println("This program will return the minimum and maximum value observed in a user-defined array.");
+        System.out.println("How many values will your array have? ");
+        int arraySize = in.nextInt();
+        //Create array
+        int[] intArray = new int[arraySize];
+        //Get user to input their chosen values based on the size they gave before
+        for(int i = 0; i < arraySize; i++) {
+            System.out.print("Enter value " + i + ": ");
+            intArray[i] = in.nextInt();
+        }
+        //Use loop to go through array, by tracking the array while iterating
+        int maxValue = intArray[0];
+        int minValue = intArray[0];
+
+        for(int j = 0; j < intArray.length; j++){
+            if (intArray[j] > maxValue){
+               maxValue = intArray[j];
+            }
+            if (intArray[j] < minValue){
+                minValue = intArray[j];
+            }
+        }
+        //Create result array
+        int[] resultantValues = new int[2];
+
+        resultantValues[0] = minValue;
+        resultantValues[1] = maxValue;
+        //Return result
+        return resultantValues;
+
     }
 
 
