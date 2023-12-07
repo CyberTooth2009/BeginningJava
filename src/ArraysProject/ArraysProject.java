@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.lang.Math;
 import java.util.Arrays;
 
-public class wArraysProject {
+public class ArraysProject {
     public static void main(String[] args) {
         //Declaring libraries
         Scanner in = new Scanner(System.in);
@@ -42,6 +42,7 @@ public class wArraysProject {
             case 4:
                 System.out.println(Arrays.toString(arrayReverser()));
             case 5:
+                System.out.println(Arrays.toString(minMaxArray()));
 
 
 
@@ -178,7 +179,7 @@ public class wArraysProject {
         int[] intArray = new int[arraySize];
         //Get user to input their chosen values based on the size they gave before
         for(int i = 0; i < arraySize; i++) {
-            System.out.print("Enter value " + i + ": ");
+            System.out.print("Enter value number " + i + ": ");
             intArray[i] = in.nextInt();
         }
         //Use loop to go through array, by tracking the array while iterating
@@ -199,8 +200,8 @@ public class wArraysProject {
         resultantValues[0] = minValue;
         resultantValues[1] = maxValue;
         //Return result
+        System.out.println("The result is given in [minValue, maxValue] format");
         return resultantValues;
-
     }
 
 
