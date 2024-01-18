@@ -38,14 +38,55 @@ public class ProgrammingReviewModule6 {
         System.out.print("Enter your choice: ");
         int choice = in.nextInt();
 
-        switch (choice){
+        switch (choice) {
             case 1:
-                System.out.println(-5 +8 * 6);
+                System.out.println(-5 + 8 * 6);
                 System.out.println((55 + 9) % 9);
                 System.out.println(20 + -3 * 5 / 8);
                 System.out.println(5 + 15 / 3 * 2 - 8 % 3);
 
+            case 2:
+                System.out.println("Please input a value");
+                int number = 0;
+                number = in.nextInt();
+                System.out.println(returnVal(number));
+
+            case 3:
+                System.out.println("Please input temperature values:");
+                int [] temps = {0,0};
+                System.out.println("Value 1:");
+                temps[0] = in.nextInt();
+                System.out.println("Value 2:");
+                temps[1] = in.nextInt();
+                System.out.println(returnTemp(temps));
+
+
+
+
         }
 
     }
+
+    public static boolean returnVal(int num) {
+        boolean result = false;
+
+        if (100 - Math.abs(num) <= 10) {
+            result = true;
+        } else if ((200 - Math.abs(num) <= 10)) {
+            result = true;
+        }
+
+        return result;
+    }
+    public static boolean returnTemp(int[] plebs){
+        if ((plebs[0] >= 100 || plebs[1] <= 0) && ){
+            return true;
+        } else if (plebs[1] >= 100 || plebs[2] <= 0) {
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
 }
