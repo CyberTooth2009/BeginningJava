@@ -41,8 +41,10 @@ public class MultiDimensionalArraysProject {
         //Switch statement to allow for option selection
         switch (choice) {
             case 1:
+
                 //Print the initialized grid
                 printCharGrid(initializeGrid());
+                break;
             case 2:
                 //Prompt for input and store it in corresponding variables
                 System.out.println("Please input your desired length and width: ");
@@ -54,8 +56,7 @@ public class MultiDimensionalArraysProject {
 
                 //Print generated grid according to the parameters given
                 printCharGrid(generateGrid(dimensions, input));
-
-
+                break;
             case 3:
                 //Print out integer grid
                 printIntGrid();
@@ -65,16 +66,14 @@ public class MultiDimensionalArraysProject {
 
                 //Feed declared array into positiveMax method
                  System.out.println("The largest number in the grid is " + positiveMax(intGrid));
-
+                 break;
             case 4:
                 //Declare checkerboard dimensions
                 int lengths = 8;
 
                 //Fill and print checkerboard given dimensions
                 fillCheckerboard(lengths);
-
-
-
+                break;
             case 5:
                 //Define matrices
                 int[][] m1 = {{1,2},{3,4}};
@@ -87,9 +86,7 @@ public class MultiDimensionalArraysProject {
 
                 //Run comparison
                 System.out.println(covers(m1, m2));
-
-
-
+                break;
         }
 
     }
@@ -169,12 +166,12 @@ public class MultiDimensionalArraysProject {
                     checkerboard[i][j] = 0;
                 }
             }
-            for (byte[] rowElm : checkerboard) {
-                for (byte elm2 : rowElm) {
-                    System.out.print(elm2 + " ");
-                }
-                System.out.println();
+        }
+        for (byte[] rowElm : checkerboard) {
+            for (byte elm2 : rowElm) {
+                System.out.print(elm2 + " ");
             }
+            System.out.println();
         }
     }
     public static void printIngGrid(int[][] grid) {
